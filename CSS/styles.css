@@ -14,9 +14,12 @@ body, html {
 }
 
 .background-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  position: fixed; /* 固定背景图位置 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 确保背景图始终在内容的后面 */
 }
 
 .content {
@@ -83,9 +86,6 @@ h1 {
   margin-top: 20px; /* 调整间距 */
   color: #333;
 }
-.title-color {
-  color: #DAA520; /* 金色，根据你的设计需求调整 */
-}
 
 .image-container {
   position: relative;
@@ -102,17 +102,70 @@ h1 {
   width: 100%;
   z-index: 2; /* 确保人物图在上层 */
 }
-
-.contact-frame {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  z-index: 0; /* 框图在最下层 */
+.contact-info {
+  position: relative; /* 定义一个相对定位的父容器 */
+  display: flex; /* 使用flex布局 */
+  flex-direction: column; /* 子元素垂直排列 */
+  justify-content: center; /* 在主轴方向上居中对齐 */
+  align-items: center; /* 在交叉轴方向上居中对齐 */
+  text-align: center; /* 文本居中 */
+  font-size: 16px; /* 根据需要调整字体大小 */
+  color: #AC4322; /* 文本颜色 */
+  margin: 0; /* 移除默认的margin */
+  padding: 20px; /* 根据需要调整内边距 */
 }
 
-.contact-info {
-  position: relative;
-  color: #333;
-  margin: 10px 0;
-  padding: 20px; /* 根据实际情况调整 */
+.contact-frame {
+  width: 80%; /* 或根据实际需要调整宽度 */
+  height: auto; /* 保持原图的纵横比 */
+  position: absolute;
+  top: 50%; /* 相对于父容器的50%定位 */
+  left: 50%; /* 相对于父容器的50%定位 */
+  transform: translate(-50%, -50%); /* 从精确中心点向左和向上偏移 */
+  z-index: -1; /* 确保框图在文本的后面 */
+}
+
+.contact-info p {
+  margin: 5px 0; /* 调整段落之间的间距 */
+  background: rgba(255, 255, 255, 0.5); /* 如果需要，可以为文本添加背景色 */
+  width: fit-content; /* 使背景适应内容的宽度 */
+  padding: 2px 10px; /* 文本的内边距 */
+}
+
+.title-color {
+  font-family: 'PingFang SC', sans-serif; /* 如果PingFang SC不可用，将回退到sans-serif字体 */
+  font-size: 13px; /* 字体大小 */
+  font-weight: 500; /* 字体粗细 */
+  line-height: 18px; /* 行高 */
+  letter-spacing: 5px; /* 字母间距 */
+  text-align: center; /* 文本对齐 */
+  color: #CA5632 !important;/* 根据需要调整颜色，例如金色 */
+  left: 50%; /* 左右居中 */
+  /* 其他样式保持不变 */  
+}
+
+.swipe-down {
+  position: fixed;
+  /*固定位置，不随滚动条移动*/left: 50%;
+  /*左右居中*/bottom: 36px;
+  /*距离底部36px，根据需要调整*/transform: translateX(-50%);
+  /*横向居中对齐*/background: #fff;
+  /*背景色，根据需要调整*/padding: 10px 20px;
+  /*内边距，根据需要调整*/border: 1px solid #000;
+  /*边框，根据需要调整*/border-radius: 25px;
+  /*圆角边框*/font-size: 16px;
+  /*字体大小，根据需要调整*/color: #9A3A10;
+  /*字体颜色*/box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /*阴影效果，增加立体感*/z-index: 1000;
+  /*确保在其他内容上方*/cursor: pointer;
+  /*鼠标悬停时显示指针手势*/display: flex;
+  /*使用flex布局来对齐文本*/justify-content: center;
+  /*水平居中*/align-items: center;
+  /*垂直居中*/width: fit-content;
+  /*自动适应内容宽度*/white-space: nowrap;
+   /* 防止文本换行 */;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
