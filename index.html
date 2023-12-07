@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>简单的H5页面</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            margin: auto;
+            width: 80%;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>欢迎来到我的H5页面</h1>
+        <p>这是一个简单的H5页面示例，可以在微信中查看。</p>
+        <button class="button" onclick="showMessage()">点击这里</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function showMessage() {
+            document.getElementById("message").innerHTML = "你已成功点击按钮！";
+        }
+    </script>
+</body>
+</html>
