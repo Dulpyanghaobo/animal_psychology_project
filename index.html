@@ -7,20 +7,34 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <div class="background">
-        <img src="images/background.png" alt="背景图" class="background-image">
-        <button class="music-toggle" id="musicToggle">
-          <img src="images/music-icon.png" alt="音乐播放按钮" id="musicIcon">
-        </button>
-        <div class="content">
-            <image src="images/fly-bird.png" alt="飞鸟">
-            <h1>动物性格心理学测试</h1>
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
-            </div>
-            <div class="percentage" id="percentage">0%</div>
+  <div id="loading-section" class="background">
+    <img src="images/background.png" alt="背景图" class="background-image">
+    <button class="music-toggle" id="musicToggle">
+      <img src="images/music-icon.png" alt="音乐播放按钮" id="musicIcon">
+    </button>
+    <div class="content">
+        <image src="images/fly-bird.png" alt="飞鸟">
+        <h1>动物性格心理学测试</h1>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
         </div>
+        <div class="percentage" id="percentage">0%</div>
     </div>
-    <script src="JS/script.js"></script>
+  </div>
+  <div id="main-section" class="main-content hidden">
+    <h2 class="title-color">Animal Personality Psychology</h2>
+    <img src="images/page_text_1.png" alt="页面文本" class="page-text">
+    <div class="image-container">
+      <img src="images/background-section-1.png" alt="人物背景图片" class="people-background-image">
+      <img src="images/people.png" alt="人物图片" class="people-image">
+    </div>
+    <div class="contact-info">
+      <img src="images/contact-frame.png" alt="联系方式框" class="contact-frame">
+      <p>联系方式: 13000000000</p>
+      <p>公众号: 名学堂国学</p>
+    </div>
+    <div class="swipe-down">向下滑动</div>
+  </div>  
+  <script src="JS/script.js"></script>
 </body>
 </html>

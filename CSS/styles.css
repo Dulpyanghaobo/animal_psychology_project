@@ -1,3 +1,4 @@
+
 body, html {
     margin: 0;
     padding: 0;
@@ -63,4 +64,55 @@ h1 {
 .music-toggle img {
     width: 30px;
     height: 30px;
+}
+
+.hidden {
+  display: none;
+}
+
+.main-content {
+  text-align: center;
+  padding: 20px;
+  background-image: url('images/background-section.png'); /* 背景图片路径 */
+  background-size: cover;
+  background-position: center;
+  /* 可能需要其他样式来确保布局在所有设备上看起来都很好 */
+}
+
+.main-content h2 {
+  margin-top: 20px; /* 调整间距 */
+  color: #333;
+}
+.title-color {
+  color: #DAA520; /* 金色，根据你的设计需求调整 */
+}
+
+.image-container {
+  position: relative;
+}
+
+.people-background-image {
+  position: absolute;
+  width: 100%;
+  z-index: 1; /* 确保背景图在下层 */
+}
+
+.people-image {
+  position: relative;
+  width: 100%;
+  z-index: 2; /* 确保人物图在上层 */
+}
+
+.contact-frame {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  z-index: 0; /* 框图在最下层 */
+}
+
+.contact-info {
+  position: relative;
+  color: #333;
+  margin: 10px 0;
+  padding: 20px; /* 根据实际情况调整 */
 }

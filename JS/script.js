@@ -9,6 +9,7 @@ window.onload = function() {
   function frame() {
       if (width >= 100) {
           clearInterval(interval);
+          showMainContent(); // 当进度条完成时显示主内容区域
       } else {
           width++;
           progress.style.width = width + '%';
@@ -18,6 +19,9 @@ window.onload = function() {
 
   let musicToggle = document.getElementById('musicToggle');
   let musicIcon = document.getElementById('musicIcon');
+  let loadingSection = document.getElementById('loading-section');
+  let mainSection = document.getElementById('main-section');
+
   let music = new Audio('Resources/music.mp3'); // 替换为你的音乐文件路径
   
   // 默认开始播放音乐
@@ -37,5 +41,33 @@ window.onload = function() {
           console.log('Music paused...');
       }
   };
+
+  function showMainContent() {
+    loadingSection.style.display = 'none';
+    mainSection.classList.remove('hidden'); // 使用classList来控制显示
+    setUpSwipeListener(); // 设置滑动监听器
+  }
+  
+  // 设置向下滑动的监听器
+  function setUpSwipeListener() {
+    let touchstartY = 0;
+    let touchendY = 0;
+  
+    document.addEventListener('touchstart', e => {
+      touchstartY = e.changedTouches[0].screenY;
+    }, false);
+  
+    document.addEventListener('touchend', e => {
+      touchendY = e.changedTouches[0].screenY;
+      handleSwipeGesture();
+    }, false);
+  
+    function handleSwipeGesture() {
+      if (touchendY < touchstartY) {
+        console.log('Swiped up');
+        // 这里添加逻辑来处理滑动后的动作，比如加载下一个界面
+      }
+    }
+  }
 };
 
