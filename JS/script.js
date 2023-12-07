@@ -17,15 +17,23 @@ window.onload = function() {
   }
 
   let musicToggle = document.getElementById('musicToggle');
-  let musicPlaying = false;
-  // Placeholder function for music toggling
+  let musicIcon = document.getElementById('musicIcon');
+  let music = new Audio('Resources/music.mp3'); // 替换为你的音乐文件路径
+  
+  // 默认开始播放音乐
+  let musicPlaying = true;
+  music.play();
+  
+  // 切换音乐播放和暂停的函数
   musicToggle.onclick = function() {
       musicPlaying = !musicPlaying;
       if (musicPlaying) {
-          // Logic to play music
+          music.play();
+          musicIcon.src = "images/music-icon.png"; // 播放时的图标
           console.log('Music playing...');
       } else {
-          // Logic to pause music
+          music.pause();
+          musicIcon.src = "images/music-close.png"; // 暂停时的图标
           console.log('Music paused...');
       }
   };
